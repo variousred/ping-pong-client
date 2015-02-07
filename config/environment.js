@@ -25,6 +25,10 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.host = "http://g5-ping-pong-84.herokuapp.com";
+    ENV.contentSecurityPolicy = {
+      'connect-src': 'http://g5-ping-pong-84.herokuapp.com'
+    }
   }
 
   if (environment === 'test') {

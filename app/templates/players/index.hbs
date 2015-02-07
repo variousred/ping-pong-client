@@ -1,9 +1,10 @@
 <h3>Players index</h3>
 <ul>
-  {{#each}}
+  {{#each player in model}}
   <li>
-    {{first_name}}
-    {{last_name}}
+    {{#link-to 'players.show' player}}
+      {{player.first_name}} {{player.last_name}}
+    {{/link-to}}
   </li>
   {{/each}}
 </ul>

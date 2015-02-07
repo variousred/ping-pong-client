@@ -44,7 +44,10 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.APP.host = "http://g5-ping-pong-84.herokuapp.com";
+    ENV.contentSecurityPolicy = {
+      'connect-src': 'http://g5-ping-pong-84.herokuapp.com'
+    }
   }
 
   return ENV;

@@ -1,10 +1,26 @@
-<h3>Players index</h3>
-<ul>
-  {{#each player in model}}
-  <li>
-    {{#link-to 'players.show' player}}
-      {{player.first_name}} {{player.last_name}}
-    {{/link-to}}
-  </li>
-  {{/each}}
-</ul>
+<table class="primary">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Matches</th>
+      <th>Games</th>
+      <th>Skill Points</th>
+      <th>Skill Trend</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each itemController='players/item'}}
+    <tr>
+      <td>{{increment-integer _view.contentIndex}}</td>
+      <td>{{link-to model.fullName "players.show" model}}</td>
+      <td>{{model.match_wins}}-{{model.match_losses}}</td>
+      <td>{{model.game_wins}}-{{model.game_losses}}</td>
+      <td>{{model.trueSkillRounded}}</td>
+      <td><span {{bind-attr class="trendClass"}}></span>{{model.trendDiff}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+

@@ -1,28 +1,11 @@
-<h2>Player</h2>
-<p>{{model.first_name}}</p>
-<p>{{model.last_name}}</p>
-
 <form {{action "save" on="submit"}}>
-  <h2>{errorMessage}}</h2>
-  <p>
-    <label>
-      First Name:
-      {{input value=model.first_name}}
-    </label>
-  </p>
-  <p>
-    <label>
-      Last Name:
-      {{input value=model.last_name}}
-    </label>
-  </p>
-  <p>
-    <label>
-      Email:
-      {{input value=model.email}}
-    </label>
-  </p>
-  <input type="submit" value="save">
-  <button {{action "cancel"}}>Cancel</button>
+  <h2>{{errorMessage}}</h2>
+  <fieldset>
+    {{input value=model.first_name placeholder="First Name"}}</br>
+    {{input value=model.last_name placeholder="Last Name"}}</br>
+    {{input value=model.email placeholder="Email"}}</br>
+    <input type="submit" value="save" class="primary">
+    <button {{action "cancel"}}>Cancel</button>
+  </fieldset>
 </form>
 

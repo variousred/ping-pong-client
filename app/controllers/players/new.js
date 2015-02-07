@@ -1,4 +1,10 @@
-import Ember from 'ember';
+import PlayersBaseController from './base';
 
-export default Ember.Controller.extend({
+export default PlayersBaseController.extend({
+  actions: {
+    cancel: function(){
+      this.transitionToRoute('friends.index');
+      return false;
+    }
+  }
 });

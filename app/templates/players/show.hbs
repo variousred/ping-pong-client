@@ -1,5 +1,7 @@
-<ul>
-  <li>First Name: {{model.first_name}}</li>
-  <li>Last Name: {{model.last_name}}</li>
-  <li>Email: {{model.email}}</li>
-</ul>
+<div class="player-profile">
+  <p>{{model.first_name}}</p>
+  <p>{{model.last_name}}</p>
+  <p>{{model.email}}</p>
+  <p>{{link-to "Edit info" "players.edit" model}}</p>
+</div>
+
